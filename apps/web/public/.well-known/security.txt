@@ -1,0 +1,9 @@
+# Política de divulgação de vulnerabilidades do Lamborghini (RFC 9116).
+# Não divulgue publicamente antes de podermos analisar e corrigir.
+# Detalhes da política: https://lamborghini.com/support/security
+
+Contact: mailto:security@lamborghini.com
+Expires: 2028-09-07T00:00:00.000Z
+Preferred-Languages: pt-BR, en-US, es-ES
+Canonical: https://lamborghini.com/.well-known/security.txt
+Policy: https://lamborghini.com/support/security
