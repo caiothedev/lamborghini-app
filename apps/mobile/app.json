@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Lamborghini",
+    "slug": "lamborghini",
+    "scheme": "lamborghini",
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}

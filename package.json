@@ -1,5 +1,24 @@
 {
   "name": "lamborghini",
-  "description": "",
-  "scripts": {}
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@10.9.2",
+  "description": "Lamborghini digital ecosystem: Web and Mobile applications. - Ecossistema digital da Lamborghini: aplicações web e móveis.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.9.6"
+  }
 }

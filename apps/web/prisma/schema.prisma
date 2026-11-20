@@ -1,0 +1,159 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id                      String   @id @default(cuid())
+    name                    String
+    email                   String   @unique
+    recoveryEmail           String?  @unique
+    password                String?
+    phone                   String?
+    gender                  Gender?
+    role                    UserRole @default(CUSTOMER)
+    emailVerified           DateTime?
+    recoveryEmailVerified   DateTime?
+    imageProfile            String?
+
+    addresses               Address[]
+
+    twoFactorEnabled        Boolean  @default(false)
+    twoFactorSecret         String?
+    twoFactorVerifiedAt     DateTime?
+
+    auditLogs               AuditLog[]
+
+    createdAt               DateTime @default(now())
+    updatedAt               DateTime @updatedAt
+
+    sessions                Session[]
+
+    @@index([role])
+    @@index([createdAt])
+}
+
+model Address {
+    id           String   @id @default(cuid())
+    userId       String
+
+    zipCode      String
+    street       String
+    number       String
+    complement   String?
+    neighborhood String
+    city         String
+    state        String
+    country      String   @default("BR")
+
+    latitude     Float?
+    longitude    Float?
+
+    isDefault    Boolean  @default(true)
+
+    createdAt    DateTime @default(now())
+    updatedAt    DateTime @updatedAt
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@index([userId])
+    @@index([city, state])
+}
+
+model Session {
+    id        String   @id @default(cuid())
+    token     String   @unique
+    userId    String
+    expiresAt DateTime
+
+    createdAt DateTime @default(now())
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@index([userId])
+    @@index([expiresAt])
+}
+
+model TwoFactorRecoveryCode {
+    id        String   @id @default(cuid())
+    codeHash  String
+    usedAt    DateTime?
+    userId    String
+
+    createdAt DateTime @default(now())
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@index([userId])
+    @@index([userId, usedAt])
+}
+
+model AuditLog {
+    id          String   @id @default(cuid())
+    userId      String?
+    action      AuditAction
+    category    AuditCategory
+    description String?
+
+    entity      String?
+    entityId    String?
+
+    ipAddress   String?
+    userAgent   String?
+
+    metadata    Json?
+
+    createdAt   DateTime @default(now())
+
+    @@index([userId])
+    @@index([action])
+    @@index([category])
+    @@index([entity, entityId])
+    @@index([createdAt])
+    @@index([userId, createdAt])
+}
+
+enum Gender {
+    male
+    female
+    other
+    prefer_not_to_say
+}
+
+enum UserRole {
+    CUSTOMER
+    ADMIN
+}
+
+enum AuditAction {
+    CREATE
+    UPDATE
+    DELETE
+    LOGIN
+    LOGOUT
+    LOGIN_FAILED
+    PASSWORD_CHANGE
+    PASSWORD_RESET
+    EMAIL_CHANGE
+    TWO_FACTOR_ENABLED
+    TWO_FACTOR_DISABLED
+    TWO_FACTOR_FAILED
+    RECOVERY_CODE_USED
+    SESSION_CREATED
+    SESSION_REVOKED
+    PERMISSION_CHANGE
+    ACCESS_DENIED
+}
+
+enum AuditCategory {
+    AUTHENTICATION
+    ACCOUNT
+    SECURITY
+    ADMINISTRATION
+    DATA
+    SYSTEM
+}

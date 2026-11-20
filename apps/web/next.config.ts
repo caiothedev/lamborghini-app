@@ -1,7 +1,22 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-    /* config options here */
+    reactStrictMode: true,
+    poweredByHeader: false,
+    compress: true,
+    async headers() {
+        return [
+            {
+                source: "/:path*",
+                headers: [
+                    {
+                        key: "X-Content-Type-Options",
+                        value: "nosniff",
+                    },
+                ],
+            },
+        ]
+    }
 }
 
 export default nextConfig

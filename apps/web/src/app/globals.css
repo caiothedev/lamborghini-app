@@ -1,25 +1,73 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --background: #050505;
+    --foreground: #111111;
+    --middleground: #171717;
+    --white-background: #FFFFFF;
+    --black-text: #000000;
+    --white-text: #FFFFFF;
+    --gold: #FFC000;
+    --dark-gold: #B18707;
+    --sucess: #00FF00;
+    --error: #FF0000;
 }
 
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+    --color-middleground: var(--middleground);
+    --color-white-background: var(--white-background);
+    --color-black-text: var(--black-text);
+    --color-white-text: var(--white-text);
+    --color-gold: var(--gold);
+    --color-dark-gold: var(--dark-gold);
+    --color-sucess: var(--sucess);
+    --color-error: var(--error);
+
+    --font-sans: var(--font-roboto);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--foreground);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--middleground);
 }
 
 body {
     background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white-text);
+    font-family: 'Roboto', sans-serif;
 }
 
 button {
     cursor: pointer;
+}
+
+.title-text {
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 
 .transition-fast {
