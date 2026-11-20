@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "TEAMID.com.lamborghini.app"
+        ],
+        "components": [
+          {
+            "/": "/"
+          }
+        ]
+      }
+    ]
+  }
+}

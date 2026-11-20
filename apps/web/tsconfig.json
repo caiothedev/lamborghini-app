@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/_components/initial-sections/ConfigureYourSection.tsx"  ],
   "exclude": ["node_modules"]
 }
