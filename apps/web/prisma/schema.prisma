@@ -25,6 +25,7 @@ model User {
     twoFactorEnabled        Boolean  @default(false)
     twoFactorSecret         String?
     twoFactorVerifiedAt     DateTime?
+    twoFactorRecoveryCodes  TwoFactorRecoveryCode[]
 
     auditLogs               AuditLog[]
 
@@ -53,7 +54,7 @@ model Address {
     latitude     Float?
     longitude    Float?
 
-    isDefault    Boolean  @default(true)
+    isDefault    Boolean  @default(false)
 
     createdAt    DateTime @default(now())
     updatedAt    DateTime @updatedAt
@@ -95,6 +96,7 @@ model TwoFactorRecoveryCode {
 model AuditLog {
     id          String   @id @default(cuid())
     userId      String?
+    user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
     action      AuditAction
     category    AuditCategory
     description String?
