@@ -36,7 +36,7 @@ npm run db:migrate --workspace lamborghini-web
 
 ## Tests
 
-- Web and packages use **Vitest** (`*.test.ts` / `*.test.tsx` next to the code).
+- Web and packages use **Vitest** (`*.test.ts` / `*.test.tsx` next to the code, or in `src/__tests__` in the web app).
 - Mobile uses **Jest** with `jest-expo` and Testing Library. Mobile tests live in `src/__tests__` or next to components, never inside `src/app` (every file there becomes a route).
 - Test descriptions are written in English and comments in Portuguese.
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { matchesRoute, resolveRouteAccess, sanitizeCallbackUrl } from "../../_lib/routes"
+import { matchesRoute, resolveRouteAccess, sanitizeCallbackUrl } from "@/_lib/routes"
 
 describe("matchesRoute", () => {
     const routes = ["/home", "/login"]

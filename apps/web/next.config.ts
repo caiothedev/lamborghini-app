@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
     compress: true,
     // Pacotes internos do monorepo são publicados como TypeScript e precisam ser transpilados
     transpilePackages: ["@lamborghini/translations", "@lamborghini/validators"],
+    async redirects() {
+        return [
+            // Padrão W3C para gerenciadores de senha encontrarem a tela de troca de senha
+            { source: "/.well-known/change-password", destination: "/home/profile", permanent: false },
+        ]
+    },
     async headers() {
         return [
             {

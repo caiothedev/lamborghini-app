@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { locale, t } from "@/_lib/i18n"
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
@@ -12,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
         orientation: "portrait",
         background_color: "#101010",
         theme_color: "#D8A016",
-        lang: "pt-BR",
+        lang: locale,
         dir: "ltr",
         categories: ["automotive", "sports", "luxury"],
         icons: [

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 import { NextRequest } from "next/server"
-import { ACCESS_TOKEN_COOKIE, proxy } from "./proxy"
+import { ACCESS_TOKEN_COOKIE, proxy } from "@/proxy"
 
 function createRequest(path: string, token?: string) {
     const request = new NextRequest(new URL(path, "http://localhost:3000"))

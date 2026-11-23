@@ -36,7 +36,7 @@ O `npm install` também executa o `prisma generate` da aplicação web.
 
 ## Testes
 
-- Web e pacotes usam **Vitest** (`*.test.ts` / `*.test.tsx` ao lado do código).
+- Web e pacotes usam **Vitest** (`*.test.ts` / `*.test.tsx` ao lado do código, ou em `src/__tests__` no app web).
 - O mobile usa **Jest** com `jest-expo` e Testing Library. Os testes do mobile ficam em `src/__tests__` ou ao lado dos componentes, nunca dentro de `src/app` (todo arquivo ali vira uma rota).
 - Descrições de testes em inglês e comentários em português.
 

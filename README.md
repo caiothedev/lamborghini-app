@@ -27,7 +27,9 @@ The goal is to replicate and expand upon the digital experience of a luxury auto
 **Maintenance:** Scheduling and tracking inspections and services.
 **Notifications:** Reminders for inspections, maintenance, and other appointments.
 **Dealerships:** Locating nearby dealership locations.
-**Events:** Information regarding brand events, experiences, and activities. ## Learning objectives
+**Events:** Information regarding brand events, experiences, and activities.
+
+## Learning objectives
 
 - Develop integrated web and mobile applications.
 - Work with a monorepo architecture.

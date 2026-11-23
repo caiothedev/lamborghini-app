@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
 import Header from "@/_components/Header"
 import Footer from "@/_components/Footer"
-import { t } from "@/_lib/i18n"
+import { locale, t } from "@/_lib/i18n"
 import "./globals.css"
 
 const roboto = Roboto({
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     category: "automotive",
     openGraph: {
         type: "website",
-        locale: "pt_BR",
+        locale: locale.replace("-", "_"),
         url: "/",
         siteName: "Lamborghini",
         title: "Lamborghini | Desde que tornamos isso possível!",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "/",
         languages: {
-            "pt-BR": "/",
+            [locale]: "/",
         },
     },
     robots: {
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
     return (
-        <html lang="pt-BR" className={`${roboto.variable} h-full antialiased`}>
+        <html lang={locale} className={`${roboto.variable} h-full antialiased`}>
             <body className="min-h-full flex flex-col">
                 <Header />
                 {children}

@@ -9,7 +9,7 @@
     --white-text: #FFFFFF;
     --gold: #FFC000;
     --dark-gold: #B18707;
-    --sucess: #00FF00;
+    --success: #00FF00;
     --error: #FF0000;
 }
 
@@ -22,7 +22,7 @@
     --color-white-text: var(--white-text);
     --color-gold: var(--gold);
     --color-dark-gold: var(--dark-gold);
-    --color-sucess: var(--sucess);
+    --color-success: var(--success);
     --color-error: var(--error);
 
     --font-sans: var(--font-roboto);
