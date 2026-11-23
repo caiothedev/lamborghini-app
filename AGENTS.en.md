@@ -15,6 +15,8 @@ This project is for educational purposes only and does not represent an official
 ## Before finishing
 
 - [ ] `npm run lint` passes without errors
+- [ ] `npm run typecheck` passes without errors
+- [ ] `npm run test` passes without errors
 - [ ] `npm run build` passes without errors
 - [ ] No `any` types, no hardcoded text
 - [ ] Comments in Portuguese

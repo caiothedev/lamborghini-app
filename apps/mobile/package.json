@@ -8,18 +8,38 @@
     "dev": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
+    "web": "expo start --web",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "doctor": "expo-doctor",
+    "clean": "rm -rf .expo coverage .turbo"
   },
   "dependencies": {
+    "@lamborghini/translations": "*",
+    "@lamborghini/validators": "*",
     "expo": "~58.0.26",
-    "expo-router": "*",
+    "expo-constants": "~58.0.16",
+    "expo-linking": "~58.0.17",
+    "expo-router": "~58.0.32",
+    "expo-status-bar": "~58.0.5",
     "react": "19.3.0",
-    "react-native": "0.88.1"
+    "react-native": "0.88.1",
+    "react-native-safe-area-context": "~5.11.1",
+    "react-native-screens": "~4.30.1"
   },
   "devDependencies": {
+    "@react-native/jest-preset": "^0.88.1",
+    "@testing-library/react-native": "^14.1.0",
+    "@types/jest": "^30",
     "@types/react": "~19.3.0",
     "eslint": "^9",
-    "typescript": "^5"
+    "eslint-config-expo": "~58.0.4",
+    "jest": "^30",
+    "jest-expo": "~58.0.15",
+    "test-renderer": "^1.0.0",
+    "typescript": "^5.9.3"
   }
 }

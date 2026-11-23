@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Roboto } from "next/font/google"
 import Header from "@/_components/Header"
 import Footer from "@/_components/Footer"
+import { t } from "@/_lib/i18n"
 import "./globals.css"
 
 const roboto = Roboto({

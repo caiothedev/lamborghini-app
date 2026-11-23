@@ -1,0 +1,22 @@
+# Banco de dados local para desenvolvimento
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: lamborghini-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: lamborghini
+      POSTGRES_PASSWORD: lamborghini
+      POSTGRES_DB: lamborghini
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lamborghini"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres-data:

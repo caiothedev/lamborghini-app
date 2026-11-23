@@ -4,21 +4,40 @@
   "private": true,
   "packageManager": "npm@10.9.2",
   "description": "Lamborghini digital ecosystem: Web and Mobile applications. - Ecossistema digital da Lamborghini: aplicações web e móveis.",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
     "dev": "turbo run dev --parallel",
+    "dev:web": "turbo run dev --filter=lamborghini-web",
+    "dev:mobile": "turbo run dev --filter=lamborghini-mobile",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:coverage": "turbo run test:coverage",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "turbo run clean"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "turbo": "^2.9.6"
+    "prettier": "^3.10.1",
+    "turbo": "^2.11.13"
+  },
+  "overrides": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "@prisma/config": {
+      "effect": "^3.22.5",
+      "deepmerge-ts": "^8.0.2"
+    },
+    "@expo/fingerprint": {
+      "minimatch": "^11.0.9"
+    }
   }
 }

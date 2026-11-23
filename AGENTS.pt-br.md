@@ -15,6 +15,8 @@ O projeto possui finalidade educacional e não representa uma aplicação oficia
 ## Antes de finalizar
 
 - [ ] `npm run lint` sem erros
+- [ ] `npm run typecheck` sem erros
+- [ ] `npm run test` sem erros
 - [ ] `npm run build` sem erros
 - [ ] Sem `any`, sem texto hardcoded
 - [ ] Comentários em português

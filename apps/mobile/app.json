@@ -3,8 +3,20 @@
     "name": "Lamborghini",
     "slug": "lamborghini",
     "scheme": "lamborghini",
-    "plugins": [
-      "expo-router"
-    ]
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#050505",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.caiothedev.lamborghini"
+    },
+    "android": {
+      "package": "com.caiothedev.lamborghini"
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }

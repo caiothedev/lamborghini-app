@@ -4,6 +4,7 @@ import Link from "next/link"
 import Logo from "./ui/Logo"
 import ProfileAvatar from "./ui/ProfileAvatar"
 import { useState } from "react"
+import { t } from "@/_lib/i18n"
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,7 +13,8 @@ export default function Header() {
         <header className="flex flex-row items-center justify-center">
             <nav className="w-full flex flex-row items-center gap-3 md:gap-5 lg:gap-6">
                 <div className="w-[33%] flex flex-row items-center justify-start">
-                    <button 
+                    <button
+                        type="button"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-expanded={isMenuOpen}
                         id="menu-button"
